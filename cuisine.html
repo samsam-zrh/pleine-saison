@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3e9">
+  <meta name="description" content="Découvrez les fruits et légumes de saison en France, leurs régions de production, leurs apports nutritionnels et comment les cuisiner.">
+  <title>Pleine Saison — En cuisine</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/instrument-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css">
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="data/produce.js" defer></script>
+  <script src="data/references.js" defer></script>
+  <script src="site.js" defer></script>
+</head>
+<body data-page="cuisine">
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <div id="top"></div>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a href="index.html" class="wordmark"><span class="brand-dot" aria-hidden="true"></span>Pleine Saison</a>
+      <nav aria-label="Navigation principale">
+        <a href="calendrier.html" data-calendar-link>Le calendrier</a>
+        <a href="terroirs.html">Les terroirs</a>
+        <a href="cuisine.html" aria-current="page">En cuisine</a>
+        <a href="marche.html">Au marché</a>
+      </nav>
+      <button class="favorites-button" data-action="favorites">
+        <span data-icon="heart" aria-hidden="true"></span><span class="favorites-label">Mes favoris</span><span id="favorite-count" hidden></span>
+      </button>
+    </div>
+  </header>
+  <main id="contenu" tabindex="-1">
+    <section class="wrap kitchen" id="cuisine" aria-labelledby="kitchen-title">
+      <div class="kitchen-intro">
+        <h1 id="kitchen-title">En cuisine</h1>
+        <p>Des recettes simples pour les produits que vous rapportez du marché.</p>
+      </div>
+      <div id="recipe-feature"></div>
+      <div class="recipe-shelf">
+        <div class="recipe-shelf-head">
+          <h2>À cuisiner aussi</h2>
+          <button type="button" class="text-link" id="recipe-more" aria-controls="recipe-grid"></button>
+        </div>
+        <div class="recipe-grid" id="recipe-grid"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a href="index.html" class="wordmark"><span class="brand-dot" aria-hidden="true"></span>Pleine Saison</a>
+      <p>Un atlas des fruits et légumes de France métropolitaine.</p>
+      <button type="button" class="text-link" data-action="sources">Sources et crédits</button>
+      <a href="#top" class="back-top">Haut de page <span data-icon="up" aria-hidden="true"></span></a>
+    </div>
+  </footer>
+
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <form method="dialog" class="dialog-controls">
+      <button type="submit" class="icon-button" aria-label="Fermer" autofocus><span data-icon="close" aria-hidden="true"></span></button>
+    </form>
+    <div id="dialog-content"></div>
+  </dialog>
+  <div id="announcement" class="visually-hidden" role="status"></div>
+</body>
+</html>

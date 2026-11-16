@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3e9">
+  <meta name="description" content="Découvrez les fruits et légumes de saison en France, leurs régions de production, leurs apports nutritionnels et comment les cuisiner.">
+  <title>Pleine Saison — Bien choisir au marché</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/instrument-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css">
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="data/produce.js" defer></script>
+  <script src="data/references.js" defer></script>
+  <script src="site.js" defer></script>
+</head>
+<body data-page="marche">
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <div id="top"></div>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a href="index.html" class="wordmark"><span class="brand-dot" aria-hidden="true"></span>Pleine Saison</a>
+      <nav aria-label="Navigation principale">
+        <a href="calendrier.html" data-calendar-link>Le calendrier</a>
+        <a href="terroirs.html">Les terroirs</a>
+        <a href="cuisine.html">En cuisine</a>
+        <a href="marche.html" aria-current="page">Au marché</a>
+      </nav>
+      <button class="favorites-button" data-action="favorites">
+        <span data-icon="heart" aria-hidden="true"></span><span class="favorites-label">Mes favoris</span><span id="favorite-count" hidden></span>
+      </button>
+    </div>
+  </header>
+  <main id="contenu" tabindex="-1">
+    <section class="wrap guide" id="guide" aria-labelledby="guide-title">
+      <figure class="guide-image">
+        <img src="assets/champs.webp" width="760" height="860" alt="Rangs de légumes dans un champ vallonné au lever du jour" loading="lazy">
+      </figure>
+      <div class="guide-copy">
+        <h1 id="guide-title">Bien choisir<br><em>au marché.</em></h1>
+        <details open>
+          <summary>Le calendrier indique-t-il la date de récolte ? <span data-icon="down" aria-hidden="true"></span></summary>
+          <p>Les mois indiquent une période habituelle de consommation. La récolte varie selon la région, la variété et la météo. Des pommes récoltées en automne peuvent être consommées plusieurs mois plus tard après stockage.</p>
+        </details>
+        <details>
+          <summary>Comment vérifier l’origine d’un produit ? <span data-icon="down" aria-hidden="true"></span></summary>
+          <p>Lisez le pays d’origine sur l’étiquette ou l’ardoise. Au marché, demandez le lieu de récolte. Une AOP ou une IGP peut préciser l’origine de certaines variétés.</p>
+        </details>
+        <details>
+          <summary>Comment lire les chiffres nutritionnels ? <span data-icon="down" aria-hidden="true"></span></summary>
+          <p>Les valeurs Ciqual décrivent 100 g de la partie comestible, généralement crue. La quantité consommée, la variété et la cuisson font varier vos apports.</p>
+        </details>
+      </div>
+    </section>
+    <section class="wrap market-storage" id="conservation" aria-labelledby="storage-title">
+      <div class="section-head">
+        <h2 id="storage-title">Le bon geste</h2>
+        <p>Choisissez un fruit ou un légume pour savoir comment le reconnaître, le conserver et l’utiliser.</p>
+      </div>
+      <div class="storage-panel">
+        <div class="storage-controls">
+          <label for="storage-product">Choisir un produit</label>
+          <div class="region-select"><select id="storage-product"></select><span data-icon="down" aria-hidden="true"></span></div>
+        </div>
+        <div id="storage-detail"></div>
+      </div>
+    </section>
+
+    <section class="wrap market-leftovers" aria-labelledby="leftovers-title">
+      <div class="leftovers-copy">
+        <h2 id="leftovers-title">Cuisiner jusqu’à la dernière bouchée</h2>
+        <dl>
+          <div><dt>Cuisinez les fruits bien mûrs</dt><dd>Des pommes et des poires encore saines deviennent une compote, une garniture de crumble ou une sauce pour le yaourt.</dd></div>
+          <div><dt>Utilisez les fanes comestibles</dt><dd>Des fanes de carottes fraîches et bien lavées peuvent parfumer un bouillon ou se mixer en pesto.</dd></div>
+          <div><dt>Gardez les légumes les plus robustes pour la fin</dt><dd>Prévoyez les fraises et les figues en premier, puis les carottes, les betteraves ou les courges entières.</dd></div>
+        </dl>
+        <div class="leftovers-links"><a class="text-link" href="cuisine.html">Voir les recettes <span data-icon="arrow" aria-hidden="true"></span></a>
+        <a class="text-link" href="https://agirpourlatransition.ademe.fr/particuliers/reduire-dechets/eviter-gaspillage/reduire-gaspillage-alimentaire" target="_blank" rel="noopener">Conseils de l’ADEME</a></div>
+      </div>
+      <img src="assets/portrait-marche.webp" width="720" height="480" alt="Pommes, carottes et potimarron sur un plan de travail clair" loading="lazy">
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a href="index.html" class="wordmark"><span class="brand-dot" aria-hidden="true"></span>Pleine Saison</a>
+      <p>Un atlas des fruits et légumes de France métropolitaine.</p>
+      <button type="button" class="text-link" data-action="sources">Sources et crédits</button>
+      <a href="#top" class="back-top">Haut de page <span data-icon="up" aria-hidden="true"></span></a>
+    </div>
+  </footer>
+
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <form method="dialog" class="dialog-controls">
+      <button type="submit" class="icon-button" aria-label="Fermer" autofocus><span data-icon="close" aria-hidden="true"></span></button>
+    </form>
+    <div id="dialog-content"></div>
+  </dialog>
+  <div id="announcement" class="visually-hidden" role="status"></div>
+</body>
+</html>

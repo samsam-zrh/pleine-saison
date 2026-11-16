@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3e9">
+  <meta name="description" content="Découvrez les fruits et légumes de saison en France, leurs régions de production, leurs apports nutritionnels et comment les cuisiner.">
+  <title>Pleine Saison — Les terroirs de France</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/instrument-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css">
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="data/produce.js" defer></script>
+  <script src="data/references.js" defer></script>
+  <script src="site.js" defer></script>
+</head>
+<body data-page="terroirs">
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <div id="top"></div>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a href="index.html" class="wordmark"><span class="brand-dot" aria-hidden="true"></span>Pleine Saison</a>
+      <nav aria-label="Navigation principale">
+        <a href="calendrier.html" data-calendar-link>Le calendrier</a>
+        <a href="terroirs.html" aria-current="page">Les terroirs</a>
+        <a href="cuisine.html">En cuisine</a>
+        <a href="marche.html">Au marché</a>
+      </nav>
+      <button class="favorites-button" data-action="favorites">
+        <span data-icon="heart" aria-hidden="true"></span><span class="favorites-label">Mes favoris</span><span id="favorite-count" hidden></span>
+      </button>
+    </div>
+  </header>
+  <main id="contenu" tabindex="-1">
+    <section class="atlas" id="terroirs" aria-labelledby="atlas-title">
+      <div class="wrap atlas-layout">
+        <div class="atlas-intro">
+          <h1 id="atlas-title">Les <br>terroirs</h1>
+          <p>Explorez les régions de France métropolitaine et les produits qui y sont cultivés.</p>
+          <small>Contours IGN · Admin Express</small>
+        </div>
+        <div class="map-panel">
+          <div id="region-map"></div>
+          <p><span aria-hidden="true"></span> Région sélectionnée</p>
+        </div>
+        <div class="region-panel">
+          <label class="region-label" for="regions">Choisir une région</label>
+          <div class="region-select"><select id="regions"></select><span data-icon="down" aria-hidden="true"></span></div>
+          <div id="region-detail"></div>
+        </div>
+      </div>
+    </section>
+    <section class="wrap portraits" aria-labelledby="portraits-title">
+      <div class="section-head">
+        <h2 id="portraits-title">Portraits de terroirs</h2>
+        <p>Trois appellations pour découvrir la géographie derrière les étals. Les paysages sont des illustrations.</p>
+      </div>
+      <div class="portrait-grid">
+        <article class="portrait-item">
+          <img src="assets/portrait-corse.webp" width="720" height="480" alt="Clémentines dans un verger, avec des collines à l’arrière-plan" loading="lazy">
+          <div class="portrait-copy">
+            <p class="recipe-kicker">Corse · IGP</p>
+            <h3>Clémentine de Corse</h3>
+            <p>Le climat de l’île donne à ce fruit sa fraîcheur acidulée. La clémentine IGP est cueillie à maturité et se reconnaît souvent à ses feuilles encore attachées.</p>
+            <div class="portrait-actions">
+              <button class="text-link" data-action="portrait-region" data-id="94">Voir sur la carte <span data-icon="up" aria-hidden="true"></span></button>
+              <a class="text-link" href="https://www.inao.gouv.fr/node/1451/printable/pdf" target="_blank" rel="noopener">Fiche INAO</a>
+            </div>
+          </div>
+        </article>
+        <article class="portrait-item">
+          <img src="assets/portrait-adour.webp" width="720" height="480" alt="Kiwis suspendus dans un verger au lever du jour" loading="lazy">
+          <div class="portrait-copy">
+            <p class="recipe-kicker">Nouvelle-Aquitaine et Occitanie · IGP</p>
+            <h3>Kiwi de l’Adour</h3>
+            <p>Les vergers occupent des sols profonds et bien drainés du bassin de l’Adour, entre Landes, Pyrénées-Atlantiques et Gers.</p>
+            <div class="portrait-actions">
+              <button class="text-link" data-action="portrait-region" data-id="75">Voir sur la carte <span data-icon="up" aria-hidden="true"></span></button>
+              <a class="text-link" href="https://www.inao.gouv.fr/produit/kiwi-de-ladour-12252" target="_blank" rel="noopener">Fiche INAO</a>
+            </div>
+          </div>
+        </article>
+        <article class="portrait-item">
+          <img src="assets/portrait-ventoux.webp" width="720" height="480" alt="Grappe de raisin noir dans un vignoble au pied du mont Ventoux" loading="lazy">
+          <div class="portrait-copy">
+            <p class="recipe-kicker">Provence-Alpes-Côte d’Azur · AOP</p>
+            <h3>Muscat du Ventoux</h3>
+            <p>Ce raisin noir de table, issu du cépage muscat de Hambourg, pousse dans le Vaucluse. Il se distingue par ses notes parfumées.</p>
+            <div class="portrait-actions">
+              <button class="text-link" data-action="portrait-region" data-id="93">Voir sur la carte <span data-icon="up" aria-hidden="true"></span></button>
+              <a class="text-link" href="https://www.inao.gouv.fr/produit/muscat-du-ventoux-21090" target="_blank" rel="noopener">Fiche INAO</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a href="index.html" class="wordmark"><span class="brand-dot" aria-hidden="true"></span>Pleine Saison</a>
+      <p>Un atlas des fruits et légumes de France métropolitaine.</p>
+      <button type="button" class="text-link" data-action="sources">Sources et crédits</button>
+      <a href="#top" class="back-top">Haut de page <span data-icon="up" aria-hidden="true"></span></a>
+    </div>
+  </footer>
+
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <form method="dialog" class="dialog-controls">
+      <button type="submit" class="icon-button" aria-label="Fermer" autofocus><span data-icon="close" aria-hidden="true"></span></button>
+    </form>
+    <div id="dialog-content"></div>
+  </dialog>
+  <div id="announcement" class="visually-hidden" role="status"></div>
+</body>
+</html>

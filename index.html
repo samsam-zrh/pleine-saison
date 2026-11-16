@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3e9">
+  <meta name="description" content="Découvrez les fruits et légumes de saison en France, leurs régions de production, leurs apports nutritionnels et comment les cuisiner.">
+  <title>Pleine Saison — Fruits &amp; légumes de France</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/instrument-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="site.css">
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="data/produce.js" defer></script>
+  <script src="data/references.js" defer></script>
+  <script src="site.js" defer></script>
+</head>
+<body data-page="accueil">
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <div id="top"></div>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a href="index.html" aria-current="page" class="wordmark"><span class="brand-dot" aria-hidden="true"></span>Pleine Saison</a>
+      <nav aria-label="Navigation principale">
+        <a href="calendrier.html" data-calendar-link>Le calendrier</a>
+        <a href="terroirs.html">Les terroirs</a>
+        <a href="cuisine.html">En cuisine</a>
+        <a href="marche.html">Au marché</a>
+      </nav>
+      <button class="favorites-button" data-action="favorites">
+        <span data-icon="heart" aria-hidden="true"></span><span class="favorites-label">Mes favoris</span><span id="favorite-count" hidden></span>
+      </button>
+    </div>
+  </header>
+  <main id="contenu" tabindex="-1">
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title"><span class="hero-line"><span>Pleine</span></span> <span class="hero-line"><em>Saison.</em></span></h1>
+        <p>Les fruits et légumes au fil des mois, de nos terroirs à votre assiette.</p>
+        <div class="hero-actions">
+          <a class="primary" href="calendrier.html" data-calendar-link>Voir le calendrier <span data-icon="arrow" aria-hidden="true"></span></a>
+          <a class="text-link" href="terroirs.html">Explorer les terroirs</a>
+        </div>
+      </div>
+      <figure class="hero-figure">
+        <div class="hero-image">
+          <div id="hero-gallery" class="hero-gallery">
+            <img src="assets/hero.webp" width="1448" height="1086" alt="Potimarron ouvert, chou rouge, poires, raisin et carottes sur fond vert" fetchpriority="high" data-hero-current data-season="automne">
+          </div>
+          <div class="hero-season-note" aria-hidden="true"><span></span><strong id="hero-season-name">Automne</strong></div>
+        </div>
+        <figcaption class="hero-caption">
+          <div id="season-selector" class="season-selector" role="group" aria-label="Voir une saison">
+            <button type="button" data-season="printemps" aria-controls="hero-gallery calendrier" aria-pressed="false">Printemps</button>
+            <button type="button" data-season="ete" aria-controls="hero-gallery calendrier" aria-pressed="false">Été</button>
+            <button type="button" data-season="automne" aria-controls="hero-gallery calendrier" aria-pressed="true">Automne</button>
+            <button type="button" data-season="hiver" aria-controls="hero-gallery calendrier" aria-pressed="false">Hiver</button>
+          </div>
+          <span class="hero-credit">Nature morte de saison</span>
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a href="index.html" class="wordmark"><span class="brand-dot" aria-hidden="true"></span>Pleine Saison</a>
+      <p>Un atlas des fruits et légumes de France métropolitaine.</p>
+      <button type="button" class="text-link" data-action="sources">Sources et crédits</button>
+      <a href="#top" class="back-top">Haut de page <span data-icon="up" aria-hidden="true"></span></a>
+    </div>
+  </footer>
+
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <form method="dialog" class="dialog-controls">
+      <button type="submit" class="icon-button" aria-label="Fermer" autofocus><span data-icon="close" aria-hidden="true"></span></button>
+    </form>
+    <div id="dialog-content"></div>
+  </dialog>
+  <div id="announcement" class="visually-hidden" role="status"></div>
+</body>
+</html>
